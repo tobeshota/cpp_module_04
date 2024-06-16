@@ -6,7 +6,7 @@
 /*   By: toshota <toshota@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 22:18:45 by tobeshota         #+#    #+#             */
-/*   Updated: 2024/06/16 20:05:07 by toshota          ###   ########.fr       */
+/*   Updated: 2024/06/16 20:17:13 by toshota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ static void put_miniline(void)
 
 // 👈copiedDogのoriginalDogへの代入がdeep copyとなっているかをテストする．
 static void testDeepCopy() {
+  std::cout << "//////// d e e p   c o p y   t e s t ////////" << std::endl;
   Dog originalDog;
-
   originalDog.getBrain()->setIdea(0, "hoge");
 
   Dog copiedDog(originalDog); // 👈
@@ -91,8 +91,8 @@ static void test2(void)
 
 int main() {
   test1();
-  // test2();
-  // testDeepCopy();
+  test2();
+  testDeepCopy();
 }
 
 #ifdef DEBUG
