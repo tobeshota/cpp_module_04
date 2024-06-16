@@ -6,7 +6,7 @@
 #    By: tobeshota <tobeshota@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/03 16:13:09 by toshota           #+#    #+#              #
-#    Updated: 2024/06/14 11:08:43 by tobeshota        ###   ########.fr        #
+#    Updated: 2024/06/16 09:07:44 by tobeshota        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,10 +27,6 @@ endif
 
 ifeq ($(MAKECMDGOALS), address)
 	FLAGS += -g3 -fsanitize=address
-endif
-
-ifeq ($(MAKECMDGOALS), test)
-	FLAGS += -DTEST
 endif
 
 all: $(NAME)
@@ -59,7 +55,4 @@ debug: re
 
 address: re
 
-test:
-	./test.sh
-
-.PHONY:	all clean fclean re format debug address test
+.PHONY:	all clean fclean re format debug address
