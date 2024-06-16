@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tobeshota <tobeshota@student.42.fr>        +#+  +:+       +#+        */
+/*   By: toshota <toshota@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 21:56:37 by tobeshota         #+#    #+#             */
-/*   Updated: 2024/06/15 22:16:31 by tobeshota        ###   ########.fr       */
+/*   Updated: 2024/06/16 20:06:33 by toshota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Animal {
   Animal& operator=(const Animal& other);
   virtual ~Animal(void);
   std::string getType(void) const;
-  virtual void makeSound(void) const;
+  virtual void makeSound(void) const; //  仮想関数
 };
 
 #endif

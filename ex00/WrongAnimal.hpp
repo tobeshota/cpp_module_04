@@ -25,7 +25,7 @@ class WrongAnimal {
   WrongAnimal& operator=(const WrongAnimal& other);
   virtual ~WrongAnimal(void);
   std::string getType(void) const;
-  void makeSound(void) const;
+  void makeSound(void) const; //  仮想関数でない！
 };
 
 #endif
