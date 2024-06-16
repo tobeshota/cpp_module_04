@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toshota <toshota@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tobeshota <tobeshota@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 22:01:43 by tobeshota         #+#    #+#             */
-/*   Updated: 2024/06/16 19:42:06 by toshota          ###   ########.fr       */
+/*   Updated: 2024/06/17 00:24:41 by tobeshota        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ Cat::Cat(const Cat& other) : Animal(other), m_brain(new Brain(*other.m_brain)) {
 Cat& Cat::operator=(const Cat& other) {
   if (this != &other) {
     Animal::operator=(other);
-    *m_brain = *other.m_brain;
+    // deep copy：新しいメモリ領域を割り当て，データをコピーする
+    delete m_brain;
+    m_brain = new Brain(*other.m_brain);
   }
   std::cout << "Cat Copy assignment operator called" << std::endl;
   return *this;
