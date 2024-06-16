@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tobeshota <tobeshota@student.42.fr>        +#+  +:+       +#+        */
+/*   By: toshota <toshota@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 22:01:43 by tobeshota         #+#    #+#             */
-/*   Updated: 2024/06/16 11:01:40 by tobeshota        ###   ########.fr       */
+/*   Updated: 2024/06/16 19:40:41 by toshota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,9 @@ Dog::~Dog(void) {
 
 void Dog::makeSound(void) const {
   std::cout << "(Dog sound)Ahwoooooo" << std::endl;
+}
+
+Brain *Dog::getBrain(void) const
+{
+  return m_brain;
 }

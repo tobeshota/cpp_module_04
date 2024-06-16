@@ -6,7 +6,7 @@
 /*   By: toshota <toshota@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 22:18:45 by tobeshota         #+#    #+#             */
-/*   Updated: 2024/06/16 13:45:18 by toshota          ###   ########.fr       */
+/*   Updated: 2024/06/16 20:05:07 by toshota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,33 +19,38 @@ static void put_line(void)
   std::cout << "- " << index++ << " ────────────────────" << std::endl;
 }
 
-// static void put_miniline(void)
-// {
-//   std::cout << "─────" << std::endl;
-// }
+static void put_miniline(void)
+{
+  std::cout << "─────" << std::endl;
+}
 
+// 👈copiedDogのoriginalDogへの代入がdeep copyとなっているかをテストする．
+static void testDeepCopy() {
+  Dog originalDog;
 
-// int main()
-// {
-//   Animal* animals[10];
-//   for (int i = 0; i < 5; ++i) {
-//     animals[i] = new Dog();
-//     put_miniline();
-//     animals[i + 5] = new Cat();
-//     put_miniline();
-//   }
+  originalDog.getBrain()->setIdea(0, "hoge");
 
-//   put_line();
+  Dog copiedDog(originalDog); // 👈
+  // deep copyならばcopiedDogとoriginalDogのメモリ領域は共有されていない．
+  // そのため，この処理によってoriginalDogのideaもまた"fuga"とならないはずである．
+  copiedDog.getBrain()->setIdea(0, "fuga");
 
-//   for (int i = 0; i < 10; ++i) {
-//     animals[i]->makeSound();
-//     put_miniline();
-//     delete animals[i];
-//     put_miniline();
-//   }
-// }
+  std::cout << "Original Dog Brain Idea: " << originalDog.getBrain()->getIdea(0) << std::endl;
+  std::cout << "Copied Dog Brain Idea: " << copiedDog.getBrain()->getIdea(0) << std::endl;
 
-int main() {
+  // deep copyでは，オブジェクトのメンバ変数が指しているデータも含めて新しいメモリ領域にコピーする．
+  // shallow copyでは，オブジェクトのメンバ変数の値をそのままコピーする．
+  if (originalDog.getBrain()->getIdea(0) == copiedDog.getBrain()->getIdea(0)) {
+      std::cout << ">>>>>>>>>> Error: Shallow copy detected! <<<<<<<<<<" << std::endl;
+  } else {
+      std::cout << ">>>>>>>>>> Success: Deep copy verified! <<<<<<<<<<" << std::endl;
+  }
+}
+
+// 関数の挙動が仕様書に記載されたものと一致するかを確認するテスト1
+static void test1(void)
+{
+  std::cout << "//////// t e s t 1 ////////" << std::endl;
   const Animal* j = new Dog();  //  ①(constructor)Animal Default constructor called ②(constructor)Brain Default constructor called ③(constructor)Dog Default constructor called
 
   put_line();
@@ -60,8 +65,34 @@ int main() {
   delete j;                     //  ⑨(constructor)Brain destructor called ⑩(constructor)Dog destructor called ⑪(constructor)Animal destructor called
   put_line();
   delete i;                     //  ⑫(constructor)Brain destructor called ⑬(constructor)Cat destructor called ⑭(constructor)Animal destructor called
+}
 
-  return 0;
+// 関数の挙動が仕様書に記載されたものと一致するかを確認するテスト2
+static void test2(void)
+{
+  std::cout << "//////// t e s t 2 ////////" << std::endl;
+  Animal* animals[10];
+  for (int i = 0; i < 5; ++i) {
+    animals[i] = new Dog();
+    put_miniline();
+    animals[i + 5] = new Cat();
+    put_miniline();
+  }
+
+  put_line();
+
+  for (int i = 0; i < 10; ++i) {
+    animals[i]->makeSound();
+    put_miniline();
+    delete animals[i];
+    put_miniline();
+  }
+}
+
+int main() {
+  test1();
+  // test2();
+  // testDeepCopy();
 }
 
 #ifdef DEBUG

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tobeshota <tobeshota@student.42.fr>        +#+  +:+       +#+        */
+/*   By: toshota <toshota@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 22:16:33 by tobeshota         #+#    #+#             */
-/*   Updated: 2024/06/16 11:07:44 by tobeshota        ###   ########.fr       */
+/*   Updated: 2024/06/16 19:41:52 by toshota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Cat : public Animal {
   Cat& operator=(const Cat& other);
   ~Cat(void);
   void makeSound(void) const;
+  Brain *getBrain(void) const;
 };
 
 #endif

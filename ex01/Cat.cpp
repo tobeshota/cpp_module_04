@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tobeshota <tobeshota@student.42.fr>        +#+  +:+       +#+        */
+/*   By: toshota <toshota@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 22:01:43 by tobeshota         #+#    #+#             */
-/*   Updated: 2024/06/16 11:01:55 by tobeshota        ###   ########.fr       */
+/*   Updated: 2024/06/16 19:42:06 by toshota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,9 @@ Cat::~Cat(void) {
 
 void Cat::makeSound(void) const {
   std::cout << "(Cat sound)meowwwww" << std::endl;
+}
+
+Brain *Cat::getBrain(void) const
+{
+  return m_brain;
 }

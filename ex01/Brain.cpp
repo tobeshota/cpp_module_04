@@ -23,8 +23,7 @@ Brain::Brain(const Brain& other) {
 
 Brain& Brain::operator=(const Brain& other) {
   if (this != &other) {
-    const std::size_t ideas_size = sizeof(m_ideas) / sizeof(m_ideas[0]);
-    for(std::size_t i = 0; i < ideas_size; i++)
+    for(std::size_t i = 0; i < m_ideas_size; i++)
       this->m_ideas[i] = other.m_ideas[i];
   }
   std::cout << "Brain Copy assignment operator called" << std::endl;
@@ -33,4 +32,18 @@ Brain& Brain::operator=(const Brain& other) {
 
 Brain::~Brain(void) {
   std::cout << "(constructor)Brain destructor called" << std::endl;
+}
+
+std::string Brain::getIdea(int idea_index) const
+{
+  if (idea_index >= 0 && idea_index <= m_ideas_size - 1)
+    return m_ideas[idea_index];
+  else
+    return NULL;
+}
+
+void Brain::setIdea(int idea_index, std::string idea)
+{
+  if (idea_index >= 0 && idea_index <= m_ideas_size - 1)
+    m_ideas[idea_index] = idea;
 }
