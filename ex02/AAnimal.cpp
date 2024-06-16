@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AbstractAnimal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tobeshota <tobeshota@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,29 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AbstractAnimal.hpp"
+#include "AAnimal.hpp"
 
-AbstractAnimal::AbstractAnimal(void) : m_type("AbstractAnimal") {
-  std::cout << "(constructor)AbstractAnimal Default constructor called" << std::endl;
+AAnimal::AAnimal(void) : m_type("AAnimal") {
+  std::cout << "(constructor)AAnimal Default constructor called" << std::endl;
 }
 
-AbstractAnimal::AbstractAnimal(const AbstractAnimal& other) {
+AAnimal::AAnimal(const AAnimal& other) {
   *this = other;
-  std::cout << "(constructor)AbstractAnimal copy constructor called" << std::endl;
+  std::cout << "(constructor)AAnimal copy constructor called" << std::endl;
 }
 
-AbstractAnimal& AbstractAnimal::operator=(const AbstractAnimal& other) {
+AAnimal& AAnimal::operator=(const AAnimal& other) {
   if (this != &other) {
     this->m_type = other.m_type;
   }
-  std::cout << "AbstractAnimal Copy assignment operator called" << std::endl;
+  std::cout << "AAnimal Copy assignment operator called" << std::endl;
   return *this;
 }
 
-AbstractAnimal::~AbstractAnimal(void) {
-  std::cout << "(constructor)AbstractAnimal destructor called" << std::endl;
+AAnimal::~AAnimal(void) {
+  std::cout << "(constructor)AAnimal destructor called" << std::endl;
 }
 
-std::string AbstractAnimal::getType(void) const { return m_type; }
+std::string AAnimal::getType(void) const { return m_type; }
 
-void AbstractAnimal::makeSound(void) const { std::cout << "(AbstractAnimal sound)" << std::endl; }
+void AAnimal::makeSound(void) const { std::cout << "(AAnimal sound)" << std::endl; }

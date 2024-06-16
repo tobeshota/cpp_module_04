@@ -6,7 +6,7 @@
 /*   By: toshota <toshota@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 22:18:45 by tobeshota         #+#    #+#             */
-/*   Updated: 2024/06/16 14:05:23 by toshota          ###   ########.fr       */
+/*   Updated: 2024/06/16 19:12:22 by toshota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,22 @@ static void put_line(void)
 
 
 int main() {
-  /** 💥ここでコンパイルエラーが生じる（∵AbstractAnimalは抽象クラスであることからインスタンスを生成できないため）
+  /** 💥ここでコンパイルエラーが生じる（∵AAnimalは抽象クラスであることからインスタンスを生成できないため）
    * - エラー文 ---------------------------------------
-   * main.cpp:25:36: error: allocating an object of abstract class type 'AbstractAnimal'
-   * const AbstractAnimal* meta = new AbstractAnimal();
+   * main.cpp:25:36: error: allocating an object of abstract class type 'AAnimal'
+   * const AAnimal* meta = new AAnimal();
    *                                    ^
-   * ./AbstractAnimal.hpp:35:16: note: unimplemented pure virtual method 'makeSound' in 'AbstractAnimal'
+   * ./AAnimal.hpp:35:16: note: unimplemented pure virtual method 'makeSound' in 'AAnimal'
    *   virtual void makeSound(void) const = 0;
    *                ^
    * 1 error generated.
    * make: *** [objs/main.o] Error 1
    * -------------------------------------------------
    */
-  const AbstractAnimal* meta = new AbstractAnimal();  //  💥
+  // const AAnimal* meta = new AAnimal();  //  💥
 
-  const AbstractAnimal* j = new Dog();
-  const AbstractAnimal* i = new Cat();
+  const AAnimal* j = new Dog();
+  const AAnimal* i = new Cat();
 
   put_line();
   std::cout << j->getType() << " " << std::endl;

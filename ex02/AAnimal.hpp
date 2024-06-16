@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AbstractAnimal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tobeshota <tobeshota@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,20 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ABSTRACTANIMAL_HPP
-#define ABSTRACTANIMAL_HPP
+#ifndef AAnimal_HPP
+#define AAnimal_HPP
 
 #include <iostream>
 
-class AbstractAnimal {
+class AAnimal {
  protected:
   std::string m_type;
 
  public:
-  AbstractAnimal(void);
-  AbstractAnimal(const AbstractAnimal& other);
-  AbstractAnimal& operator=(const AbstractAnimal& other);
-  virtual ~AbstractAnimal(void);
+  AAnimal(void);
+  AAnimal(const AAnimal& other);
+  AAnimal& operator=(const AAnimal& other);
+  virtual ~AAnimal(void);
   std::string getType(void) const;
   /** 純粋仮想関数 c.f．https://cpp-lang.sevendays-study.com/ex-day6.html
    * 後ろに「=0」がついた仮想関数を純粋仮想関数と呼ぶ．
