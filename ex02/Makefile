@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tobeshota <tobeshota@student.42.fr>        +#+  +:+       +#+         #
+#    By: toshota <toshota@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/03 16:13:09 by toshota           #+#    #+#              #
-#    Updated: 2024/06/16 09:07:44 by tobeshota        ###   ########.fr        #
+#    Updated: 2024/06/16 19:13:42 by toshota          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	a.out
 CC			=	c++
-FLAGS		=	-Wall -Wextra -Werror -std=c++98 -pedantic-errors
+FLAGS		=	-Wall -Wextra -Werror -std=c++98 -pedantic-errors -MP -MMD
 RM			=	rm -rf
 OBJS_DIR	=	objs/
 

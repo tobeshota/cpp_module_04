@@ -8,6 +8,7 @@
 
 # object files
 *.o
+*.d
 *.a
 
 # test files
